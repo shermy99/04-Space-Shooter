@@ -1,2 +1,2 @@
-# 04-Space-Shooter
-The goal of this project is to create a space shooter
+# Project-Template-Godot
+A default Godot project template for MSCH-C220
