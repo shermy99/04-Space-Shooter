@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/missle.png" type="Texture" id=1]
+[ext_resource path="res://Assets/beams.png" type="Texture" id=1]
 [ext_resource path="res://bullet.gd" type="Script" id=2]
 
 [node name="bullet" type="KinematicBody2D"]
@@ -10,5 +10,6 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1.0064, 1 )
+position = Vector2( 631.698, 0 )
+scale = Vector2( 15.5282, 1 )
 texture = ExtResource( 1 )

@@ -23,6 +23,8 @@ func _physics_process(delta):
 		move_vec.x += 1
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
+	if Input.is_action_just_released("quit"):
+		get_tree().quit()
 	move_vec = move_vec.normalized()
 	move_and_collide(move_vec * MOVE_SPEED * delta)
 	
