@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/10.png" type="Texture" id=1]
+[ext_resource path="res://Zombie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fighter.png" type="Texture" id=3]
+[ext_resource path="res://Player2.gd" type="Script" id=4]
+[ext_resource path="res://zombie4.gd" type="Script" id=5]
+
+[node name="World" type="Node2D"]
+
+[node name="Zombie" parent="." instance=ExtResource( 2 )]
+position = Vector2( 242.659, 403.324 )
+
+[node name="Zombie2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 207.202, 122.992 )
+
+[node name="Zombie3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 784.488, 140.72 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 600.413, 370.591 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PoolVector2Array( 7.2, -26, 27.6, -26, 29.7, -16, 34, -11, 39.4, -11, 52, -5.7, 52, 5, 51.3, 5, 35, 10.4, 35, 11, 30, 15, 30, 22.8, 26.8, 26, 7.7, 26, 0.200001, 41, -23, 41, -23, 15.6, -24.1, 14, -36.3, 14, -41.8, 25, -43.5, 25, -51, 28, -51, 24, -52, 13.4, -52, -16.8, -50.8, -27, -43.8, -27, -36.8, -14, -24.1, -14, -23, -15.6, -23, -41, 0, -41 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+scale = Vector2( 1.69438, 1.2318 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="Muzzle" type="Position2D" parent="Player"]
+position = Vector2( 60, 0 )
+
+[node name="zombie4" type="KinematicBody2D" parent="."]
+position = Vector2( 83.6, 132.05 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="zombie4"]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="zombie4"]
+polygon = PoolVector2Array( -20.5, -49, -18.1, -49, -15.1, -54, -9, -54, -9, -55, 7.1, -55, 27, -53.9, 27, -52.8, 42, -50.8, 42, -48.7, 44, -46, 53.5, -46, 55, -45.2, 55, -35, 40, -33.2, 40, -31.4, 28, -28.5, 33, -25.1, 33, -21.7, 31.8, -18, 32.9, -18, 40, -9.7, 40, -4, 42.7, 5, 40.5, 5, 38.6, 13, 36.6, 13, 31, 17, 31, 17.6, 33.8, 26, 31.1, 26, 29.8, 28, 32.7, 28, 38.7, 33, 46.2, 33, 55, 35, 55, 45, 53.2, 45, 45, 45.8, 45, 46.8, 40.8, 51, 28.1, 51, 26.1, 54, 9, 54, 9, 55, -7.4, 55, -19.8, 49.6, -35.7, 58, -54, 58, -54, 57, -55, 53.1, -55, 43, -52.8, 43, -43, 33.2, -43, 30.1, -50, 26.2, -50, 5, -45, 1, -45, -0.200001, -50, -5.2, -50, -27, -47.6, -27, -43, -30.1, -43, -32, -49.1, -41, -50.4, -41, -55, -42.8, -55, -56.4, -54, -57.7, -37.6, -58 )
+
+[node name="RayCast2D" type="RayCast2D" parent="zombie4"]
+scale = Vector2( 1.02964, 0.982468 )
+enabled = true
