@@ -8,6 +8,7 @@ var player = null
 
 func _ready():
 	add_to_group("zombies")
+	
 
 func _physics_process(delta):
 	if player == null:
@@ -22,6 +23,11 @@ func _physics_process(delta):
 		var coll = raycast.get_collider()
 		if coll.name == "Player":
 			coll.kill()
+
+func repeat_me():
+	var scene = load("res://Zombie.tscn")
+	var zombie = scene.instance()
+	add_child(zombie)
 
 func kill():
 	queue_free()

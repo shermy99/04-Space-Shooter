@@ -38,8 +38,12 @@ func _physics_process(delta):
 
 func shoot():
 	var b = Bullet.instance()
+	var a = Bullet.instance()
 	b.start($Muzzle.global_position, rotation)
+	a.start($Muzzle2.global_position, rotation)
 	get_parent().add_child(b)
+	get_parent().add_child(a)
+
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

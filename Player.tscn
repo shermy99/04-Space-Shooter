@@ -1,35 +1,43 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://soldier.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fighter.png" type="Texture" id=1]
+[ext_resource path="res://Player2.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 20.0
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -21.1324, -12.3773, -19.1953, -14.8955, -19.1953, -41.2403, -4.66693, -41.6277, 5.79352, -22.4503, 26.3271, -21.8689, 27.2956, -13.5393, 33.107, -8.30911, 38.5309, -7.34058, 51.2382, -1.60068, 51.7032, 1.95758, 39.277, 7.22787, 32.8692, 7.93985, 26.319, 13.4933, 26.4614, 22.037, 5.24457, 22.3217, -3.58398, 40.6908, -19.6747, 40.8332, -19.6746, 16.0564, -23.3769, 10.6454, -38.1861, 10.9302, -44.7363, 23.0338, -49.1506, 23.0338, -49.0082, 7.93988, -52.6149, 6.46405, -52.4692, -9.24445, -49.2206, -23.2251, -44.7652, -23.2251, -36.823, -10.2465 )
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 600.413, 370.591 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 1 )
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+occluder = SubResource( 1 )
 
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 7.2, -26, 27.6, -26, 29.7, -16, 34, -11, 39.4, -11, 52, -5.7, 52, 5, 51.3, 5, 35, 10.4, 35, 11, 30, 15, 30, 22.8, 26.8, 26, 7.7, 26, 0.200001, 41, -23, 41, -23, 15.6, -24.1, 14, -36.3, 14, -41.8, 25, -43.5, 25, -51, 28, -51, 24, -52, 13.4, -52, -16.8, -50.8, -27, -43.8, -27, -36.8, -14, -24.1, -14, -23, -15.6, -23, -41, 0, -41 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
-
-position = Vector2( 17.5658, 0.35849 )
-texture = ExtResource( 2 )
-
-[node name="RayCast2D" type="RayCast2D" parent="." index="2"]
-
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 32.9948, 18.1033 )
+scale = Vector2( 1.69438, 1.2318 )
 enabled = true
-exclude_parent = true
+cast_to = Vector2( 600900, 0 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2( 32.1188, -16.3514 )
+enabled = true
 cast_to = Vector2( 2000, 0 )
-collision_mask = 1
 
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 32.261, -16.3514 )
 
+[node name="Muzzle2" type="Position2D" parent="."]
+position = Vector2( 32.9948, 18.1033 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 1 )

@@ -8,6 +8,7 @@ var player = null
 
 func _ready():
 	add_to_group("zombies")
+	
 
 func _physics_process(delta):
 	if player == null:
