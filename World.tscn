@@ -9,17 +9,17 @@
 [ext_resource path="res://Assets/light.png" type="Texture" id=7]
 [ext_resource path="res://Assets/spot.png" type="Texture" id=8]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 346.048, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 [sub_resource type="RectangleShape2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=5]
-
-[sub_resource type="RectangleShape2D" id=6]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 6 )
@@ -105,39 +105,28 @@ enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ship4"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="blue-space-3840x2160" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 1011.29, 496.271 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 516.646, 511.315 )
-texture = ExtResource( 7 )
-
 [node name="walls" type="StaticBody2D" parent="."]
 position = Vector2( 1778.98, 2178.16 )
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
 position = Vector2( -857.254, -1090.2 )
 scale = Vector2( 4.79732, 1.11826 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
 position = Vector2( -1788.08, -1545.39 )
 scale = Vector2( 1, 100 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
 position = Vector2( -842.432, -2181.4 )
 scale = Vector2( 100, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
 position = Vector2( 153.423, -1305.49 )
 scale = Vector2( 1, 100 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Node2D" type="Node2D" parent="."]

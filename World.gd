@@ -12,7 +12,7 @@ func _ready():
 	
 	
 	var timer = Timer.new()
-	timer.set_wait_time(3.0)
+	timer.set_wait_time(1.5)
 	timer.set_one_shot(false)
 	timer.connect("timeout", self, "repeat_me")
 	add_child(timer)

@@ -5,7 +5,7 @@ const MOVE_SPEED = 300
 var Bullet = preload("res://bullet.tscn")
 
 onready var raycast = $RayCast2D
-
+onready var raycast2 = $RayCast2D2
 
 func _ready():
 	yield(get_tree(), "idle_frame")
@@ -34,6 +34,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		var coll = raycast.get_collider()
 		if raycast.is_colliding() and coll.has_method("kill"):
+			coll.kill()
+	
+	if Input.is_action_just_pressed("shoot"):
+		var coll = raycast2.get_collider()
+		if raycast2.is_colliding() and coll.has_method("kill"):
 			coll.kill()
 
 func shoot():
