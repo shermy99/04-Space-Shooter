@@ -26,7 +26,7 @@ polygon = PoolVector2Array( -20.5, -49, -18.1, -49, -15.1, -54, -9, -54, -9, -55
 [node name="RayCast2D" type="RayCast2D" parent="."]
 scale = Vector2( 1.02964, 0.982468 )
 enabled = true
-cast_to = Vector2( 55, 0 )
+cast_to = Vector2( 70, 0 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 texture = ExtResource( 1 )
